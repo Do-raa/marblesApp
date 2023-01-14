@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marbles</title>
+</head>
+<body>
+    <img class="image" src="images/marble2.jpg" alt="marble"/> 
+    <img class="image" src="images/marble1.jpg" alt="marble"/> 
+    <img class="image" src="images/marble1.jpg" alt="marble"/> 
+    <img class="image" src="images/marble1.jpg" alt="marble"/> 
+    <img class="image" src="images/marble1.jpg" alt="marble"/> 
+    <img class="image" src="images/marble1.jpg" alt="marble"/> 
+
+<script>
+    let redMarbleIndex = 0; 
+    let myImage = document.querySelector(".image");
+    var myInterval;
+
+    myImage.addEventListener("mouseout", () =>{ 
+        myInterval = setInterval(() => { 
+
+            document.images[redMarbleIndex].src="images/marble1.jpg"
+        
+        redMarbleIndex < document.images.length-1 ?
+                redMarbleIndex++ :
+                redMarbleIndex = 0  
+       
+        document.images[redMarbleIndex].src="images/marble2.jpg" 
+        }, 1000)
+    })
+  
+    myImage.addEventListener("mouseover", ()=> clearInterval(myInterval))  
+    
+    
+</script>
+</body>
+</html>
